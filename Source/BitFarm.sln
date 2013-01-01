@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitFarm.Web", "BitFarm.Web\BitFarm.Web.csproj", "{AE80A67C-11D6-4D29-941B-D1B63858162E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitFarm.Domain", "BitFarm.Domain\BitFarm.Domain.csproj", "{2D79E5BD-25A9-4A07-BB34-10BF137DAA79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitFarm.Tests", "BitFarm.Tests\BitFarm.Tests.csproj", "{448C901B-5FD3-467C-BD66-B7D29DB38F2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE80A67C-11D6-4D29-941B-D1B63858162E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE80A67C-11D6-4D29-941B-D1B63858162E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE80A67C-11D6-4D29-941B-D1B63858162E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE80A67C-11D6-4D29-941B-D1B63858162E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D79E5BD-25A9-4A07-BB34-10BF137DAA79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D79E5BD-25A9-4A07-BB34-10BF137DAA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D79E5BD-25A9-4A07-BB34-10BF137DAA79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D79E5BD-25A9-4A07-BB34-10BF137DAA79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{448C901B-5FD3-467C-BD66-B7D29DB38F2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{448C901B-5FD3-467C-BD66-B7D29DB38F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{448C901B-5FD3-467C-BD66-B7D29DB38F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{448C901B-5FD3-467C-BD66-B7D29DB38F2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
