@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using BitFarm.Domain;
 using Moq;
 using NUnit.Framework;
 
@@ -12,7 +13,7 @@ namespace BitFarm.Tests
         [ExpectedException(typeof(InvalidOperationException))]
         public void I_cannot_start_a_game_of_agricola_without_enrolling_players()
         {
-            var game = new AgricolaGame();
+            var game = new Game();
             game.Start();
         }
 
@@ -20,7 +21,7 @@ namespace BitFarm.Tests
         public void I_can_start_a_game_of_agricola_with_one_enrolled_player()
         {
             var player = GetMockPlayer();
-            var game = new AgricolaGame();
+            var game = new Game();
             game.Enrol(player);
             game.Start();
         }
@@ -28,7 +29,7 @@ namespace BitFarm.Tests
         [Test]
         public void I_can_start_a_game_of_agricola_with_two_enrolled_players()
         {
-            var game = new AgricolaGame();
+            var game = new Game();
 
             for (int i = 0; i < 2; i++)
             {
@@ -41,7 +42,7 @@ namespace BitFarm.Tests
         [Test]
         public void I_can_start_a_game_of_agricola_with_three_enrolled_players()
         {
-            var game = new AgricolaGame();
+            var game = new Game();
 
             for (int i = 0; i < 3; i++)
             {
@@ -54,7 +55,7 @@ namespace BitFarm.Tests
         [Test]
         public void I_can_start_a_game_of_agricola_with_four_enrolled_players()
         {
-            var game = new AgricolaGame();
+            var game = new Game();
 
             for (int i = 0; i < 4; i++)
             {
@@ -67,7 +68,7 @@ namespace BitFarm.Tests
         [Test]
         public void I_can_start_a_game_of_agricola_with_five_enrolled_players()
         {
-            var game = new AgricolaGame();
+            var game = new Game();
 
             for (int i = 0; i < 5; i++)
             {
@@ -81,7 +82,7 @@ namespace BitFarm.Tests
         [ExpectedException(typeof(InvalidOperationException))]
         public void I_cannot_enrol_a_sixth_player()
         {
-            var game = new AgricolaGame();
+            var game = new Game();
 
             for (int i = 0; i < 6; i++)
             {
@@ -92,7 +93,7 @@ namespace BitFarm.Tests
         [Test]
         public void When_I_enrol_a_player_it_is_added_to_the_games_players_list()
         {
-            var game = new AgricolaGame();
+            var game = new Game();
             var player = GetMockPlayer();
 
             game.Enrol(player);
@@ -101,9 +102,9 @@ namespace BitFarm.Tests
         }
 
 
-        private AgricolaPlayer GetMockPlayer()
+        private Player GetMockPlayer()
         {
-            return new Mock<AgricolaPlayer>().SetupAllProperties().Object;
+            return new Mock<Player>().SetupAllProperties().Object;
         }
     }
 }
