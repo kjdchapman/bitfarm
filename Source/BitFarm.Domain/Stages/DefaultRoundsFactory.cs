@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using BitFarm.Domain.Interfaces;
+using BitFarm.Tests;
 
 namespace BitFarm.Domain.Stages
 {
@@ -6,7 +8,24 @@ namespace BitFarm.Domain.Stages
     {
         public IEnumerable<Round> GetRounds()
         {
-            return new List<Round>();
+            return new List<Round>
+            {
+                new Round(),
+                new Round(),
+                new Round(),
+                new Round(),
+                new Round(),
+                
+                new Round(),
+                new Round(),
+                new Round(),
+                new Round(),
+                new Round(),
+                    
+                new Round(),
+                new Round(),
+                new Round(),
+            };
         }
     }
 }

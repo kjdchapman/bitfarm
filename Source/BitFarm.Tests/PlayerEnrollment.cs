@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using BitFarm.Domain;
+using BitFarm.Domain.Stages;
 using Moq;
 using NUnit.Framework;
 

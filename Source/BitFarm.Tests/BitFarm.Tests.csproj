@@ -46,7 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AvailableMoves.cs" />
+    <Compile Include="AvailableMovesFromRounds.cs" />
+    <Compile Include="AvailableMovesFromBaseGame.cs" />
     <Compile Include="PlayerEnrollment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StagesAndRounds.cs" />

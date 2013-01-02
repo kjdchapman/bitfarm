@@ -1,0 +1,17 @@
+﻿Take resources (e.g. building materials, sheep, food, starting player token)
+-> some stockpile
+-> some a flat amount
+
+Create something on a space (e.g. house, fence, stable) 
+
+Convert some resources into some other resources
+
+Gain an outside card (minor improvements, major improvements, occupations)
+
+Do a thing and/or a second thing
+
+Do a thing and then a second thing, but only if you can do the first thing
+
+Actions have:
+- A cost (paying the cost could be complex, e.g. returning the fireplace for an oven)
+- 1-* effects

@@ -1,7 +1,7 @@
 ﻿namespace BitFarm.Domain.Stages
 {
-    public struct Stage
+    public class Stage
     {
-        public int Number { get; private set; }
+        public int Number { get; set; }
     }
 }

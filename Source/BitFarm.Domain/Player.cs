@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using BitFarm.Domain.Interfaces;
 
 namespace BitFarm.Domain
 {
-    public class Player
+    public class Player : IPlayer
     {
         private Game _enrolledGame;
         private List<Move> _possibleMoves;
@@ -12,7 +13,7 @@ namespace BitFarm.Domain
             _possibleMoves = new List<Move>();
         }
 
-        public IEnumerable<Move> PossibleMoves
+        public IEnumerable<Move> GetPossibleMoves
         {
             get { return _possibleMoves; }
         }
@@ -22,7 +23,7 @@ namespace BitFarm.Domain
             _enrolledGame = game;
         }
 
-        public void PublishAvailableMoves(List<Move> availableMoves)
+        public void UpdatePossibleMoves(List<Move> availableMoves)
         {
             _possibleMoves = availableMoves;
         }

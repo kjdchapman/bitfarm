@@ -1,14 +1,11 @@
 ﻿namespace BitFarm.Domain.Stages
 {
-    public struct Round
+    public class Round
     {
-        private Stage _stage;
+        public int Number { get; set; }
 
-        public Stage Stage
-        {
-            get { return _stage; }
-        }
+        public Stage Stage { get; set; }
 
-        public int Number { get; private set; }
+        public Move AvailableMove { get; set; }
     }
 }

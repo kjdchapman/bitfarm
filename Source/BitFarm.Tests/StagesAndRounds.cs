@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using BitFarm.Domain;
 using BitFarm.Domain.Stages;
+using Moq;
 using NUnit.Framework;
 
 namespace BitFarm.Tests
@@ -13,26 +16,12 @@ namespace BitFarm.Tests
     public class StagesAndRounds
     {
         [Test]
-        public void When_a_game_is_started_it_is_stage_one()
-        {
-            var game = new Game();
-            Assert.That(game.CurrentStage.Number, Is.EqualTo(1));
-        }
-
-        [Test]
-        public void When_a_game_is_started_it_is_round_one()
-        {
-            var game = new Game();
-            Assert.That(game.CurrentRound.Number, Is.EqualTo(1));
-        }
-
-        [Test]
-        public void The_default_stages_factory_produces_6_stages()
+        public void The_default_stages_factory_produces_13_rounds()
         {
             var stageFactory = new DefaultRoundsFactory();
             var result = stageFactory.GetRounds();
 
-            Assert.That(result.Count(), Is.EqualTo(6));
+            Assert.That(result.Count(), Is.EqualTo(13));
         }
     }
 }

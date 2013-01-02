@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Stages\IRoundsFactory.cs" />
+    <Content Include="Moves\actiontypes.txt" />
+    <Compile Include="Interfaces\IRoundsFactory.cs" />
+    <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Stages\DefaultRoundsFactory.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Moves\Move.cs" />
