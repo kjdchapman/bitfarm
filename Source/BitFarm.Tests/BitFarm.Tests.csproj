@@ -49,6 +49,7 @@
     <Compile Include="AvailableMoves.cs" />
     <Compile Include="PlayerEnrollment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StagesAndRounds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
