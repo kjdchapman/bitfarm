@@ -1,0 +1,68 @@
+﻿Well:
+	+4 points
+	-- +1 food for the next 5 rounds
+	{1 wood, 1 stone}
+
+
+Fireplace:
+	+1 point
+	-- can convert
+		vegetable	-> 2 food
+		sheep		-> 2 food
+		wild boar	-> 2 food
+		cattle		-> 3 food
+	-- can bake
+		grain		-> 2 food
+	{2 copies, 2/3 clay}
+
+
+Cooking Hearth:
+	+1 point
+	-- can convert
+		vegetable	-> 3 food
+		sheep		-> 2 food
+		wild boar	-> 3 food
+		cattle		-> 4 food
+	-- can bake
+		grain		-> 3 food
+	{2 copies, 4/5 clay / return Fireplace}
+
+
+Clay Oven:
+	+2 points
+	-- can bake
+		grain 		-> 5 food (MAXIMUM ONE)
+	-- can bake once when you buy
+	{3 clay, 1 stone}
+
+
+Stone Oven:
+	+3 points
+	-- can bake
+		grain 		-> 4 food (MAXIMUM TWO)
+	-- can bake once when you buy
+	{1 clay, 3 stone}
+
+
+Joinery:
+	+2 points
+	-- can convert at harvest
+		wood		-> 2 food (MAXIMUM ONE)
+	-- +1/2/3 bonus points for 3/5/7 wood at end of game
+	{2 stone, 2 wood}
+
+
+Pottery:
+	+2 points
+	-- can convert at harvest
+		clay		-> 2 food (MAXIMUM ONE)
+	-- +1/2/3 bonus points for 3/5/7 clay at end of game
+	{2 stone, 2 clay}
+
+
+Basketmaker's Workshop:
+	+2 points
+	-- can convert at harvest
+		reed		-> 3 food (MAXIMUM ONE)
+	-- +1/2/3 bonus points for 2/4/5 reed at end of game
+	{2 stone, 2 reed}

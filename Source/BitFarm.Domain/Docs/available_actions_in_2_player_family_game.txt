@@ -1,0 +1,110 @@
+﻿AFTER, ALSO means first action must be completed to take the second
+
+Starting
+
+	Build room(s): [Wooden]/[Clay]/[Stone] hut 
+	{5 wood/clay/stone + 2 reed/room}
+	AND/OR
+	Build stable(s)
+	{2 wood/stable}
+	
+	Starting Player
+	AND
+	"Storehouse": +1 food
+
+	"Take 1 grain": +1 grain
+
+	"Plow 1 field": +1 plowed field to place in the farm, adjacent to existing
+
+	"Build Stable"
+	{1 wood/stable, 1 stable max}
+	AND/OR
+	"Bake bread": X* food, IF relevant improvement available
+	{X grain}
+
+	"Day Labourer": +1 food, +1 wood OR clay OR reed OR stone
+
+	"3 wood": +3* wood [stockpiles]
+
+	"1 clay": +1* clay [stockpiles]
+
+	"1 reed": +1* reed [stockpiles]
+
+	"fishing": +1* food [stockpiles]
+
+
+Stage 1 (round 1-4)
+
+	1 major or minor improvement 
+	{variable costs}
+
+	"1 sheep": +1* sheep [stockpiles]
+
+	"Sow": +3 grain or +2 vegetables on selected number of plowed fields
+	{1 grain/vegetable per selected field}
+	AND/OR
+	"Bake bread": X* food, IF relevant improvement available
+	{X grain}
+
+	"Fences": +fences [max X]
+	{X wood}
+
+
+Stage 2 (round 5-7)
+
+	"1 stone": +1* stone [stockpiles]
+
+	AFTER
+	"Renovation": all rooms updated to clay/stone
+	{1 reed + (1 [clay/stone] per room)}
+	ALSO
+	1 major or minor improvement
+
+	AFTER
+	"Family Growth": +1 family member
+	{requires space in home}
+	ALSO
+	1 minor improvement [ignored in family mode]
+
+
+Stage 3 (round 8-9)
+	
+	"Take 1 vegetable": +1 vegetable
+
+	"1 Wild boar": +1* boar [stockpiles]
+
+
+Stage 4 (round 10-11)
+
+	"1 cattle": +1* cattle [stockpiles]
+
+	"1 stone": +1* stone [stockpiles]
+
+
+STage 5 (round 12-13)
+
+	"Family Growth w/out space": +1 family member
+
+	"Plow 1 field": see above
+	AND/OR
+	"Sow": see above
+
+
+Stage 6 (round 14)
+
+	AFTER
+	"Renovation": see above
+	ALSO
+	Fences: 1-* fences
+	{1 wood/fence}
+
+
+
+
+
+
+
+
+
+
+

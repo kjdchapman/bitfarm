@@ -15,3 +15,8 @@ Do a thing and then a second thing, but only if you can do the first thing
 Actions have:
 - A cost (paying the cost could be complex, e.g. returning the fireplace for an oven)
 - 1-* effects
+
+Space
+OnReveal() // modifies game state somehow, i.e. the one food that 
+OnRoundChange() // usually this is just stockpiling, i.e. the 3 wood spaces gets +3 wood each turn
+OnChoice() // 
