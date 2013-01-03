@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using BitFarm.Domain;
 using Moq;
 using NUnit.Framework;
 

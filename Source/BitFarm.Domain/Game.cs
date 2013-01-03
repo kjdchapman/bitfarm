@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using BitFarm.Tests;
+using BitFarm.Domain.Moves;
 
 namespace BitFarm.Domain
 {
@@ -25,7 +25,7 @@ namespace BitFarm.Domain
 
             for (int i = 0; i < 11; i++)
             {
-                _availableMoves.Add(new Move());
+                _availableMoves.Add(new Move(MoveType.TakeOneGrain));
             }
         }
 
