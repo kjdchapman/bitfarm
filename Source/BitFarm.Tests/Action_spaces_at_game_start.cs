@@ -20,7 +20,7 @@ namespace BitFarm.Tests
         }
 
         [Test]
-        public void Take_1_Grain_is_available()
+        public void Take_One_Grain_is_available()
         {
             Assert.That(_result.Contains(ActionSpace.Take_One_Grain));
         }
@@ -47,6 +47,36 @@ namespace BitFarm.Tests
         public void Build_Stable_And_Or_Bake_Bread_is_available()
         {
             Assert.That(_result.Contains(ActionSpace.Build_Stable_And_Or_Bake_Bread));
+        }
+
+        [Test]
+        public void Day_Labourer_is_available()
+        {
+            Assert.That(_result.Contains(ActionSpace.Day_Labourer));
+        }
+
+        [Test]
+        public void Three_Wood_Stockpile_is_available()
+        {
+            Assert.That(_result.Contains(ActionSpace.Three_Wood_Stockpile));
+        }
+
+        [Test]
+        public void One_Clay_Stockpile_is_available()
+        {
+            Assert.That(_result.Contains(ActionSpace.One_Clay_Stockpile));
+        }
+
+        [Test]
+        public void One_Reed_Stockpile_is_available()
+        {
+            Assert.That(_result.Contains(ActionSpace.One_Reed_Stockpile));
+        }
+
+        [Test]
+        public void Fishing_is_available()
+        {
+            Assert.That(_result.Contains(ActionSpace.Fishing));
         }
     }
 }
