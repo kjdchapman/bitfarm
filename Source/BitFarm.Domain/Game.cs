@@ -6,12 +6,12 @@ namespace BitFarm.Domain
     public class Game
     {
         private readonly List<Player> _players;
-        private List<Move> _availableMoves;
+        private List<ActionSpace> _actionSpaces;
 
         public Game()
         {
             _players = new List<Player>();
-            _availableMoves = new List<Move>();
+            _actionSpaces = new List<ActionSpace>();
         }
 
         public void Enrol(Player player)
@@ -21,17 +21,17 @@ namespace BitFarm.Domain
 
         public void Start()
         {
-            _availableMoves = new List<Move>();
+            _actionSpaces = new List<ActionSpace>();
 
             for (int i = 0; i < 11; i++)
             {
-                _availableMoves.Add(new Move(MoveType.TakeOneGrain));
+                _actionSpaces.Add(ActionSpace.Take_One_Grain);
             }
         }
 
-        public List<Move> GetAvailableMoves()
+        public List<ActionSpace> GetActionSpaces()
         {
-            return _availableMoves;
+            return _actionSpaces;
         }
 
         public IEnumerable<Player> GetPlayers()

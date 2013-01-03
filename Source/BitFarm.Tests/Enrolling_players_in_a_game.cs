@@ -25,7 +25,7 @@ namespace BitFarm.Tests
         {
             var subject = new Game();
 
-            var result = subject.GetAvailableMoves();
+            var result = subject.GetActionSpaces();
             Assert.That(result.Count(), Is.EqualTo(0));
         }
 
@@ -36,7 +36,7 @@ namespace BitFarm.Tests
             
             subject.Start();
             
-            var result = subject.GetAvailableMoves();
+            var result = subject.GetActionSpaces();
             Assert.That(result.Count(), Is.EqualTo(11));
         }
     }

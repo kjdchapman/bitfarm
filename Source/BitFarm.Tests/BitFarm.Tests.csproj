@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Which_moves_are_available_at_the_beginning_of_the_game.cs" />
+    <Compile Include="Action_spaces_at_game_start.cs" />
     <Compile Include="Enrolling_players_in_a_game.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

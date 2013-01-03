@@ -1,7 +1,11 @@
 ﻿namespace BitFarm.Domain.Moves
 {
-    public enum MoveType
+    public enum ActionSpace
     {
-        TakeOneGrain
+        Take_One_Grain,
+        Build_Rooms_And_Or_Build_Stables,
+        Starting_Player_And_Storehouse,
+        Plow_One_Field_And_Or_Sow,
+        Build_Stable_And_Or_Bake_Bread
     }
 }
