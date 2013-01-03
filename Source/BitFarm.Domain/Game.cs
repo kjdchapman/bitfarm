@@ -5,16 +5,16 @@ namespace BitFarm.Domain
 {
     public class Game
     {
-        private readonly List<Player> _players;
+        private readonly List<string> _players;
         private List<ActionSpace> _actionSpaces;
 
         public Game()
         {
-            _players = new List<Player>();
+            _players = new List<string>();
             _actionSpaces = new List<ActionSpace>();
         }
 
-        public void Enrol(Player player)
+        public void Enrol(string player)
         {
             _players.Add(player);
         }
@@ -34,7 +34,7 @@ namespace BitFarm.Domain
             return _actionSpaces;
         }
 
-        public IEnumerable<Player> GetPlayers()
+        public IEnumerable<string> GetPlayers()
         {
             return _players;
         }

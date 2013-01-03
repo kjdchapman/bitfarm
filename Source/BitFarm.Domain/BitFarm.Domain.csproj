@@ -44,7 +44,6 @@
     <Content Include="Notes\major_improvements.txt" />
     <Compile Include="Game.cs" />
     <Compile Include="Moves\MoveType.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
