@@ -1,20 +1,21 @@
 ﻿using System.Collections.Generic;
+using BitFarm.Domain.Interfaces;
 using BitFarm.Domain.Moves;
 
 namespace BitFarm.Domain
 {
     public class Game
     {
-        private readonly List<string> _players;
+        private readonly List<IPlayer> _players;
         private List<ActionSpace> _actionSpaces;
 
         public Game()
         {
-            _players = new List<string>();
+            _players = new List<IPlayer>();
             _actionSpaces = new List<ActionSpace>();
         }
 
-        public void Enrol(string player)
+        public void Enrol(IPlayer player)
         {
             _players.Add(player);
         }
@@ -41,7 +42,7 @@ namespace BitFarm.Domain
             return _actionSpaces;
         }
 
-        public IEnumerable<string> GetPlayers()
+        public IEnumerable<IPlayer> GetPlayers()
         {
             return _players;
         }
