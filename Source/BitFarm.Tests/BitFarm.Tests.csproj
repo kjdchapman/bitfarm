@@ -47,7 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Action_spaces_at_game_start.cs" />
+    <Compile Include="Players_making_moves_with_options.cs" />
+    <Compile Include="Player_resources_at_game_start.cs" />
     <Compile Include="Enrolling_players_in_a_game.cs" />
+    <Compile Include="Players_making_moves.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
