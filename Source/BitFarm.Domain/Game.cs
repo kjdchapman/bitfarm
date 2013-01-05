@@ -46,5 +46,10 @@ namespace BitFarm.Domain
         {
             return _players;
         }
+
+        public Resources GetResourcesFor(IPlayer stubPlayer)
+        {
+            return new Resources{StartingPlayer = true, Foods = 0};
+        }
     }
 }
