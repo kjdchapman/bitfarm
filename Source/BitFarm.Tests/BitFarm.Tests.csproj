@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Action_spaces_at_game_start.cs" />
+    <Compile Include="Action_availability_is_affected_by_player_state.cs" />
     <Compile Include="Player_resources_at_game_start.cs" />
     <Compile Include="Enrolling_players_in_a_game.cs" />
     <Compile Include="Choosing_the_first_action.cs" />
