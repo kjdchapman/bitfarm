@@ -15,6 +15,7 @@ namespace BitFarm.Tests
             var subject = new Game();
             var stubPlayer = new Mock<IPlayer>().Object;
             subject.Enrol(stubPlayer);
+            subject.Start();
 
             var result = subject.GetResourcesFor(stubPlayer);
 
@@ -27,6 +28,7 @@ namespace BitFarm.Tests
             var subject = new Game();
             var stubPlayer = new Mock<IPlayer>().Object;
             subject.Enrol(stubPlayer);
+            subject.Start();
 
             var result = subject.GetResourcesFor(stubPlayer);
 
@@ -40,6 +42,7 @@ namespace BitFarm.Tests
             var subject = new Game();
             var stubPlayer = new Mock<IPlayer>().Object;
             subject.Enrol(stubPlayer);
+            
 
             subject.GetResourcesFor(stubPlayer);
         }
@@ -52,15 +55,30 @@ namespace BitFarm.Tests
             var playerOne = new Mock<IPlayer>().Object;
             var playerTwo = new Mock<IPlayer>().Object;
             subject.Enrol(playerOne);
+            subject.Start();
 
             subject.GetResourcesFor(playerTwo);
         }
 
         [Test]
         [Description("One of the players has two food and the starting token, and the other has three food and no starting token")]
-        public void At_the_beginning_of_a_two_player_game_the_players_have_the_right_resources()
+        public void At_the_beginning_of_a_two_player_game_the_first_enrolled_player_has_the_right_resources()
         {
-            throw new NotImplementedException();    
+            var subject = new Game();
+            var playerOne = new Mock<IPlayer>().Object;
+            var playerTwo = new Mock<IPlayer>().Object;
+            subject.Enrol(playerOne);
+            subject.Enrol(playerTwo);
+            subject.Start();
+
+            var resultOne = subject.GetResourcesFor(playerOne);
+            var resultTwo = subject.GetResourcesFor(playerTwo);
+            
+            Assert.That(resultOne.Foods, Is.EqualTo(2));
+            Assert.That(resultOne.StartingPlayer, Is.EqualTo(true));
+
+            Assert.That(resultTwo.Foods, Is.EqualTo(3));
+            Assert.That(resultTwo.StartingPlayer, Is.EqualTo(false));
         }
     }
 }
