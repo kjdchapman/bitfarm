@@ -1,26 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using BitFarm.Domain.Interfaces;
 using BitFarm.Domain.Moves;
 
 namespace BitFarm.Domain
 {
     public class Game
     {
-        private readonly List<IPlayer> _players;
         private List<ActionSpace> _actionSpaces;
-        private Dictionary<IPlayer, Resources> _resourcesList;
+        private Resources _resources;
 
         public Game()
         {
-            _players = new List<IPlayer>();
             _actionSpaces = new List<ActionSpace>();
-        }
-
-        public void Enrol(IPlayer player)
-        {
-            _players.Add(player);
         }
 
         public void Start()
@@ -44,28 +35,7 @@ namespace BitFarm.Domain
 
         private void InitialiseResourceList()
         {
-            _resourcesList = new Dictionary<IPlayer, Resources>();
-
-            if (_players.Count == 1)
-            {
-                _resourcesList.Add(_players.Single(), new Resources {Foods = 0, StartingPlayer = true});
-            }
-            else
-            {
-                var firstPlayer = true;
-                foreach (var player in _players)
-                {
-                    if (firstPlayer)
-                    {
-                        _resourcesList.Add(player, new Resources {Foods = 2, StartingPlayer = true});
-                        firstPlayer = false;
-                    }
-                    else
-                    {
-                        _resourcesList.Add(player, new Resources {Foods = 3});
-                    }
-                }
-            }
+            _resources = new Resources {Foods = 0, StartingPlayer = true};
         }
 
         public List<ActionSpace> GetActionSpaces()
@@ -73,18 +43,11 @@ namespace BitFarm.Domain
             return _actionSpaces;
         }
 
-        public IEnumerable<IPlayer> GetPlayers()
+        public Resources GetResources()
         {
-            return _players;
-        }
+            if (_resources == null) throw new InvalidOperationException();
 
-        public Resources GetResourcesFor(IPlayer player)
-        {
-            if (_resourcesList == null) throw new InvalidOperationException();
-
-            if (!_resourcesList.ContainsKey(player)) throw new ArgumentException();
-
-            return _resourcesList[player];
+            return _resources;
         }
     }
 }
