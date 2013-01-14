@@ -86,7 +86,9 @@ namespace BitFarm.Domain
 
         public void Fish()
         {
-            throw new NotImplementedException();
+            if (_board == null) throw new InvalidOperationException();
+
+            _resources.Food++;
         }
     }
 }
