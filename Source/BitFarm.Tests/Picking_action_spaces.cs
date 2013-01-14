@@ -8,17 +8,27 @@ namespace BitFarm.Tests
     class Picking_action_spaces
     {
         [Test]
-        public void A_player_can_choose_the_day_labourer_action_for_wood()
+        public void Given_the_game_has_started_then_I_can_day_labourer_for_wood()
         {
             var subject = new Game();
             subject.Start();
 
             subject.DayLabour("Wood");
         }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Given_the_game_has_started_when_I_try_to_day_labour_for_gold_then_an_exception_will_be_thrown()
+        {
+            var subject = new Game();
+            subject.Start();
+
+            subject.DayLabour("Gold");
+        }
         
         [Test]
         [ExpectedException(typeof(InvalidOperationException))]
-        public void If_a_player_tries_to_day_labour_when_the_game_has_not_started_an_exception_will_be_thrown()
+        public void Given_the_game_has_not_started_when_I_try_to_day_labour_then_an_exception_will_be_thrown()
         {
             var subject = new Game();
             
@@ -26,27 +36,19 @@ namespace BitFarm.Tests
         }
 
         [Test]
-        public void If_the_player_chooses_the_day_labourer_action_with_wood_as_their_first_move_they_will_have_one_food_and_one_wood()
+        [Description("Then I will have one food, one wood, zero stone, zero reed.")]
+        public void Given_its_my_first_move_of_the_game_when_I_day_labour_for_wood_then_I_will_have_the_correct_resources()
         {
-            throw new NotImplementedException();
-        }
+            var subject = new Game();
+            subject.Start();
 
-        [Test]
-        public void If_the_player_chooses_the_day_labourer_action_with_reed_as_their_first_move_they_will_have_one_food_and_one_reed()
-        {
-            throw new NotImplementedException();
-        }
+            subject.DayLabour("Wood");
 
-        [Test]
-        public void If_the_player_chooses_the_day_labourer_action_with_stone_as_their_first_move_they_will_have_one_food_and_one_stone()
-        {
-            throw new NotImplementedException();
-        }
-
-        [Test]
-        public void If_the_player_chooses_the_day_labourer_action_with_clay_as_their_first_move_they_will_have_one_food_and_one_clay()
-        {
-            throw new NotImplementedException();
+            var result = subject.GetResources();
+            Assert.That(result.Food, Is.EqualTo(1));
+            Assert.That(result.Wood, Is.EqualTo(1));
+            Assert.That(result.Stone, Is.EqualTo(0));
+            Assert.That(result.Reed, Is.EqualTo(0));
         }
     }
 }

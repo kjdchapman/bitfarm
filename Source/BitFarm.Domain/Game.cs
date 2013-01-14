@@ -42,7 +42,7 @@ namespace BitFarm.Domain
 
         private void InitialiseResourceList()
         {
-            _resources = new Resources {Foods = 0, StartingPlayer = true};
+            _resources = new Resources {Food = 0};
         }
 
         public List<ActionSpace> GetActionSpaces()
@@ -60,6 +60,28 @@ namespace BitFarm.Domain
         public void DayLabour(string resourceType)
         {
             if (_board == null) throw new InvalidOperationException();
+
+            switch (resourceType.ToLower())
+            {
+                case "wood":
+                    _resources.Wood++;
+                    break;
+                case "clay":
+                    _resources.Clay++;
+                    break;
+                case "reed":
+                    _resources.Reed++;
+                    break;
+                case "stone":
+                    _resources.Stone++;
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            _resources.Food++;
+
         }
     }
 }

@@ -15,7 +15,7 @@ namespace BitFarm.Tests
 
             var result = subject.GetResources();
 
-            Assert.That(result.Foods, Is.EqualTo(0));
+            Assert.That(result.Food, Is.EqualTo(0));
         }
 
         [Test]
