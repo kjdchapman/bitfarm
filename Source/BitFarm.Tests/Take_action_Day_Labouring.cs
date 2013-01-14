@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace BitFarm.Tests
 {
     [TestFixture]
-    class Picking_action_spaces
+    class Take_action_Day_Labouring
     {
         [Test]
         public void Given_the_game_has_started_then_I_can_day_labourer_for_wood()
