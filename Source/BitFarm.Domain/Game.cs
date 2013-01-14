@@ -8,11 +8,17 @@ namespace BitFarm.Domain
     {
         private List<ActionSpace> _actionSpaces;
         private Resources _resources;
+        private IBoardFactory _boardFactory;
         private object _board;
 
         public Game()
         {
             _actionSpaces = new List<ActionSpace>();
+        }
+
+        public Game(IBoardFactory boardFactory) : this()
+        {
+            _boardFactory = boardFactory;
         }
 
         public void Start()
@@ -37,7 +43,9 @@ namespace BitFarm.Domain
 
         private void InitialiseBoard()
         {
-            _board = new object();
+            _board = _boardFactory != null
+                        ? _boardFactory.GetBoard()
+                        : new object();
         }
 
         private void InitialiseResourceList()
