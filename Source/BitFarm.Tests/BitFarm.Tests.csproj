@@ -47,7 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Action_spaces_at_game_start.cs" />
-    <Compile Include="Picking_action_spaces.cs" />
+    <Compile Include="Copy of Take_action_Day_Labouring.cs" />
+    <Compile Include="Take_action_Day_Labouring.cs" />
     <Compile Include="Player_resources_at_game_start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

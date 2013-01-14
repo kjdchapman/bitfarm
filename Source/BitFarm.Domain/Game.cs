@@ -83,5 +83,10 @@ namespace BitFarm.Domain
             _resources.Food++;
 
         }
+
+        public void Fish()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
