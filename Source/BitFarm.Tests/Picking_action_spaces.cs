@@ -1,4 +1,5 @@
 ﻿using System;
+using BitFarm.Domain;
 using NUnit.Framework;
 
 namespace BitFarm.Tests
@@ -7,29 +8,21 @@ namespace BitFarm.Tests
     class Picking_action_spaces
     {
         [Test]
-        public void A_player_can_choose_the_day_labourer_action()
+        public void A_player_can_choose_the_day_labourer_action_for_wood()
         {
-            throw new NotImplementedException();
+            var subject = new Game();
+            subject.Start();
+
+            subject.DayLabour("Wood");
         }
         
-        [Test]
-        public void A_player_can_choose_the_day_labourer_action_alternate()
-        {
-            throw new NotImplementedException();
-        }
-
-        [Test]
-        [ExpectedException(typeof(InvalidOperationException))]
-        public void If_a_player_tries_to_day_labour_when_they_are_not_enrolled_an_exception_will_be_thrown()
-        {
-            throw new NotImplementedException();
-        }
-
         [Test]
         [ExpectedException(typeof(InvalidOperationException))]
         public void If_a_player_tries_to_day_labour_when_the_game_has_not_started_an_exception_will_be_thrown()
         {
-            throw new NotImplementedException();
+            var subject = new Game();
+            
+            subject.DayLabour("Wood");
         }
 
         [Test]

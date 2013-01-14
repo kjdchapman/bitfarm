@@ -8,6 +8,7 @@ namespace BitFarm.Domain
     {
         private List<ActionSpace> _actionSpaces;
         private Resources _resources;
+        private object _board;
 
         public Game()
         {
@@ -31,6 +32,12 @@ namespace BitFarm.Domain
             };
 
             InitialiseResourceList();
+            InitialiseBoard();
+        }
+
+        private void InitialiseBoard()
+        {
+            _board = new object();
         }
 
         private void InitialiseResourceList()
@@ -48,6 +55,11 @@ namespace BitFarm.Domain
             if (_resources == null) throw new InvalidOperationException();
 
             return _resources;
+        }
+
+        public void DayLabour(string resourceType)
+        {
+            if (_board == null) throw new InvalidOperationException();
         }
     }
 }
