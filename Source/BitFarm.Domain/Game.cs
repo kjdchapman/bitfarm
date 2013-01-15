@@ -8,17 +8,13 @@ namespace BitFarm.Domain
     {
         private List<ActionSpace> _actionSpaces;
         private Resources _resources;
-        private IBoardFactory _boardFactory;
         private object _board;
+        private int _roundCounter;
+        private const int TotalRoundCount = 14;
 
         public Game()
         {
             _actionSpaces = new List<ActionSpace>();
-        }
-
-        public Game(IBoardFactory boardFactory) : this()
-        {
-            _boardFactory = boardFactory;
         }
 
         public void Start()
@@ -37,20 +33,9 @@ namespace BitFarm.Domain
                 ActionSpace.Three_Wood_Stockpile
             };
 
-            InitialiseResourceList();
-            InitialiseBoard();
-        }
-
-        private void InitialiseBoard()
-        {
-            _board = _boardFactory != null
-                        ? _boardFactory.GetBoard()
-                        : new object();
-        }
-
-        private void InitialiseResourceList()
-        {
             _resources = new Resources {Food = 0};
+            _board = new object();
+            _roundCounter = 1;
         }
 
         public List<ActionSpace> GetActionSpaces()
@@ -60,14 +45,14 @@ namespace BitFarm.Domain
 
         public Resources GetResources()
         {
-            if (_resources == null) throw new InvalidOperationException();
+            if (!GameHasStarted()) throw new InvalidOperationException();
 
             return _resources;
         }
 
         public void DayLabour(string resourceType)
         {
-            if (_board == null) throw new InvalidOperationException();
+            if (!GameHasStarted()) throw new InvalidOperationException();
 
             switch (resourceType.ToLower())
             {
@@ -94,9 +79,28 @@ namespace BitFarm.Domain
 
         public void Fish()
         {
-            if (_board == null) throw new InvalidOperationException();
+            if (!GameHasStarted()) throw new InvalidOperationException();
 
             _resources.Food++;
+        }
+
+        public int GetCurrentRound()
+        {
+            if (!GameHasStarted()) throw new InvalidOperationException();
+
+            return _roundCounter;
+        }
+
+        private bool GameHasStarted()
+        {
+            return _board != null;
+        }
+
+        public void NextRound()
+        {
+            if (_roundCounter >= TotalRoundCount) throw new InvalidOperationException();
+
+            _roundCounter++;
         }
     }
 }

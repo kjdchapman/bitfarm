@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBoardFactory.cs" />
     <Compile Include="Resources.cs" />
     <Content Include="Notes\available_actions_in_2_player_family_game.txt" />
     <Content Include="Notes\major_improvements.txt" />
