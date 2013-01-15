@@ -6,11 +6,14 @@ namespace BitFarm.Domain
 {
     public class Game
     {
+        private const int TotalRoundCount = 14;
+        
         private List<ActionSpace> _actionSpaces;
         private Resources _resources;
         private object _board;
         private int _roundCounter;
-        private const int TotalRoundCount = 14;
+
+        private int _fishingSpaceFoodCount;
 
         public Game()
         {
@@ -36,6 +39,7 @@ namespace BitFarm.Domain
             _resources = new Resources {Food = 0};
             _board = new object();
             _roundCounter = 1;
+            _fishingSpaceFoodCount = 1;
         }
 
         public List<ActionSpace> GetActionSpaces()
@@ -81,7 +85,8 @@ namespace BitFarm.Domain
         {
             if (!GameHasStarted()) throw new InvalidOperationException();
 
-            _resources.Food++;
+            _resources.Food += _fishingSpaceFoodCount;
+            _fishingSpaceFoodCount = 0;
         }
 
         public int GetCurrentRound()
@@ -100,6 +105,7 @@ namespace BitFarm.Domain
         {
             if (_roundCounter >= TotalRoundCount) throw new InvalidOperationException();
 
+            _fishingSpaceFoodCount++;
             _roundCounter++;
         }
     }
